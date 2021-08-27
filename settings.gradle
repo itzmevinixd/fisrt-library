@@ -4,8 +4,16 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+        maven {
+            url = uri("https://maven.pkg.github.com/itzmevinixd/fisrt-library")
+            credentials {
+                username = System.getenv('GITHUB_USER')
+                password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN')
+            }
+        }
     }
 }
 rootProject.name = "AppDistribution"
 include ':app'
 include ':sdktest'
+include ':rootbeer'
