@@ -9,18 +9,9 @@ jobs:
   publish:
     name: Release Simple Library
     runs-on: ubuntu-latest
-
     permissions:
-      actions: write
-      checks: write
-      contents: write
-      deployments: write
-      issues: write
+      contents: read
       packages: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
 
     steps:
       - uses: actions/checkout@v2
@@ -46,7 +37,7 @@ jobs:
         run: bash ./gradlew test
 
       - name: Build AAR ⚙️🛠
-        run: bash ./gradlew :sdktest:assemble
+        run: bash ./gradlew :sdktest:assembleRelease
 
       - name: Publish to GitHub Package Registry 🚀
         run: bash ./gradlew :sdktest:publish
