@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 11
+          distribution: 'adopt'
 
       - name: Cache Gradle and wrapper
         uses: actions/cache@v2
