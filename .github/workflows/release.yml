@@ -35,7 +35,6 @@ jobs:
       - name: Publish to GitHub Package Registry 🚀
         run: bash ./gradlew :sdktest:publish
         env:
-          GPR_USER: ${{ github.actor }}
           GPR_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release ✅
