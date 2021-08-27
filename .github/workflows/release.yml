@@ -31,7 +31,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Unit tests
-          run: bash ./gradlew test
+        run: bash ./gradlew test
 
       - name: Build AAR ⚙️🛠
         run: bash ./gradlew :sdktest:assemble
